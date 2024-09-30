@@ -146,9 +146,13 @@ const App = () => {
                 .
               </p>
               <a
-                className="text-red-400"
+                className="flex items-center text-red-500 hover:text-red-600 transition-colors duration-300"
                 href={`mailto:${import.meta.env.VITE_EMAIL}`}
               >
+                <i
+                  className="fas fa-envelope mr-2 text-lg"
+                  aria-hidden="true"
+                ></i>
                 {import.meta.env.VITE_EMAIL}
               </a>
               <ul className="mt-5 flex items-center" aria-label="Social media">
