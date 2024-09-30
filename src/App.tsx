@@ -70,7 +70,7 @@ const App = () => {
   };
 
   return (
-    <div className="bg-black bg-opacity-86 leading-relaxed text-slate-400 antialiased selection:bg-red-500 selection:text-teal-900">
+    <div className="h-screen overflow-y-scroll bg-black bg-opacity-86 leading-relaxed text-slate-400 antialiased selection:bg-red-500 selection:text-teal-900">
       <div className="font-sans mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
         <div>
           {!isMobile && (
