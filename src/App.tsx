@@ -11,7 +11,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 
 const App = () => {
-  const [activeSection, setActiveSection] = useState("");
+  const [activeSection, setActiveSection] = useState("about");
   const [isMobile, setIsMobile] = useState(false);
   const [visibleCount, setVisibleCount] = useState(skillVisibleCount ?? 1);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -33,6 +33,10 @@ const App = () => {
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
 
+    if (scrollPosition === 0) {
+      setActiveSection(sections[0].name.toLowerCase());
+      return;
+    }
     sections.forEach((section) => {
       const sectionElement = document.getElementById(
         section.name.toLowerCase()
@@ -70,7 +74,7 @@ const App = () => {
   };
 
   return (
-    <div className="h-screen overflow-y-scroll bg-black bg-opacity-86 leading-relaxed text-slate-400 antialiased selection:bg-red-500 selection:text-teal-900">
+    <div className="overflow-y-scroll bg-black bg-opacity-86 leading-relaxed text-slate-400 antialiased selection:bg-red-500 selection:text-teal-900">
       <div className="font-sans mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
         <div>
           {!isMobile && (
